@@ -6,3 +6,29 @@ En segundo lugar, hay un límite de 32 caracteres en total para los nombres de a
 Advertencia : ese límite se alcanza fácilmente y, si se ignora, los problemas pueden pasar desapercibidos porque no aparecerá ningún mensaje de error en la compilación ni en el tiempo de ejecución.
 
 ejemplo, el nombre del archivo /website/images/bird_thumbnail.jpg tiene 34 caracteres y causará algunos problemas si se usa
+
+### Codigo prueba 1
+```c++
+#include <LITTLEFS.h>
+
+#define FORMAT_LITTLEFS_IF_FAILED false
+
+void setup()
+{
+  Serial.begin(115200);
+
+  if (!LITTLEFS.begin())
+  {
+    Serial.println("Error montando LittleFs");
+    return;
+  }
+
+  Serial.println("Demo de LittleFS");
+
+}
+
+void loop()
+{
+
+}
+```
