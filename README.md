@@ -65,5 +65,44 @@ void loop()
 {
 
 }
+```
 
+### Codigo para escribir un archivo 
+```c++
+#include <LITTLEFS.h>
+
+//Esta variable true para formatear
+#define FORMAT_LITTLEFS_IF_FAILED false
+
+String ruta = "ruta.txt";
+String texto = "Este es el texto que se escribio";
+
+void setup()
+{
+  Serial.begin(115200);
+
+  File archivo = LITTLEFS.open(ruta, "w");
+
+  if(!archivo)
+  {
+    Serial.println("El archivo no se puede abrir");
+  }
+
+  if(archivo.print(texto))
+  {
+    Serial.println("Se escribio en el archivo");
+  }
+
+  else{
+    Serial.println("Error al escribir")
+  }
+
+   archivo.close();
+
+}
+
+void loop()
+{
+
+}
 ```
