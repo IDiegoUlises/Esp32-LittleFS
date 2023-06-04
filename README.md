@@ -34,3 +34,36 @@ void loop()
 
 }
 ```
+
+### Codigo para formatear la memoria
+```c++
+#include <LITTLEFS.h>
+
+//Esta variable true para formatear
+#define FORMAT_LITTLEFS_IF_FAILED true
+
+void setup()
+{
+  Serial.begin(115200);
+
+  if (!LITTLEFS.begin(FORMAT_LITTLEFS_IF_FAILED))
+  {
+    Serial.println("Error montando LittleFs");
+    return;
+  }
+  else
+  {
+    Serial.println("Formateado correctamente");
+  }
+  
+
+  LITTLEFS.end();
+
+}
+
+void loop()
+{
+
+}
+
+```
