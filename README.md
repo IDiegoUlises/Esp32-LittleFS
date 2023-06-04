@@ -25,6 +25,8 @@ void setup()
 
   Serial.println("Demo de LittleFS");
 
+  LITTLEFS.end();
+
 }
 
 void loop()
