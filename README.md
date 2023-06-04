@@ -106,3 +106,40 @@ void loop()
 
 }
 ```
+
+### Codigo para leer un archivo
+```c++
+#include <LITTLEFS.h>
+
+//Esta variable true para formatear
+#define FORMAT_LITTLEFS_IF_FAILED false
+
+String ruta = "ruta.txt";
+String texto = "Este es el texto que se escribio";
+
+void setup()
+{
+  Serial.begin(115200);
+
+  File archivo = LITTLEFS.open(ruta, "r");
+
+  if(!archivo)
+  {
+    Serial.println("El archivo no se puede abrir");
+    return;
+  }
+
+  while(archivo.available())
+  {
+    Serial.write(archivo.read()); //Escribe lo que ahi en el archivo 
+  }
+
+   archivo.close();
+
+}
+
+void loop()
+{
+
+}
+```
