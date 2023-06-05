@@ -95,7 +95,7 @@ void setup()
   }
 
   else{
-    Serial.println("Error al escribir")
+    Serial.println("Error al escribir");
   }
 
    archivo.close();
