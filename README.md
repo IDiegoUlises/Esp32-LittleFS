@@ -1,4 +1,4 @@
-# Esp32-Littlefs
+# Esp32 LittleFS
 
 ### Libreria
 <img src="https://github.com/IDiegoUlises/Esp32-LittleFS/blob/main/Images/Libreria-LittleFS.jpg" />
