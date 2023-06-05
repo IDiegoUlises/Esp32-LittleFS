@@ -166,3 +166,6 @@ a+     Open for reading and appending (writing at end of file).  The
        file is created if it does not exist.  The initial file
        position for reading is at the beginning of the file, but
        output is always appended to the end of the file.
+
+
+investigar como crear carpetas, como saber si existe el archivo, como borrar un archivo en especifico y como spendell algo asi que es para escribir mas datos en un archivo.txt que ya existe y descubrir otras funciones
