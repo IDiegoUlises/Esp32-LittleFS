@@ -86,6 +86,7 @@ void setup()
   if(!archivo)
   {
     Serial.println("El archivo no se puede abrir");
+    return;
   }
 
   if(archivo.print(texto))
