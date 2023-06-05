@@ -7,34 +7,6 @@ Advertencia : ese límite se alcanza fácilmente y, si se ignora, los problemas 
 
 ejemplo, el nombre del archivo /website/images/bird_thumbnail.jpg tiene 34 caracteres y causará algunos problemas si se usa
 
-### Codigo prueba 1
-```c++
-#include <LITTLEFS.h>
-
-#define FORMAT_LITTLEFS_IF_FAILED false
-
-void setup()
-{
-  Serial.begin(115200);
-
-  if (!LITTLEFS.begin())
-  {
-    Serial.println("Error montando LittleFs");
-    return;
-  }
-
-  Serial.println("Demo de LittleFS");
-
-  LITTLEFS.end();
-
-}
-
-void loop()
-{
-
-}
-```
-
 ### Codigo para formatear la memoria
 ```c++
 #include <LITTLEFS.h>
@@ -74,31 +46,44 @@ void loop()
 //Esta variable true para formatear
 #define FORMAT_LITTLEFS_IF_FAILED false
 
-String ruta = "ruta.txt";
+String ruta = "/ruta.txt";
 String texto = "Este es el texto que se escribio";
 
 void setup()
 {
   Serial.begin(115200);
 
+  if (!LITTLEFS.begin())
+  {
+    Serial.println("Error montando LittleFs");
+    return;
+  }
+
+  else {
+    Serial.println("Demo de LittleFS");
+  }
+
+  delay(5000);
+
   File archivo = LITTLEFS.open(ruta, "w");
 
-  if(!archivo)
+  if (!archivo)
   {
     Serial.println("El archivo no se puede abrir");
     return;
   }
 
-  if(archivo.print(texto))
+  if (archivo.print(texto))
   {
     Serial.println("Se escribio en el archivo");
   }
 
-  else{
+  else {
     Serial.println("Error al escribir");
   }
 
-   archivo.close();
+  archivo.close();
+  LITTLEFS.end();
 
 }
 
@@ -115,27 +100,39 @@ void loop()
 //Esta variable true para formatear
 #define FORMAT_LITTLEFS_IF_FAILED false
 
-String ruta = "ruta.txt";
-String texto = "Este es el texto que se escribio";
+String ruta = "/ruta.txt";
+//String texto = "Este es el texto que se escribio";
 
 void setup()
 {
   Serial.begin(115200);
 
+  if (!LITTLEFS.begin())
+  {
+    Serial.println("Error montando LittleFs");
+    return;
+  }
+  else {
+    Serial.println("Demo de LittleFS");
+  }
+
+  delay(5000);
+
   File archivo = LITTLEFS.open(ruta, "r");
 
-  if(!archivo)
+  if (!archivo)
   {
     Serial.println("El archivo no se puede abrir");
     return;
   }
 
-  while(archivo.available())
+  while (archivo.available())
   {
-    Serial.write(archivo.read()); //Escribe lo que ahi en el archivo 
+    Serial.write(archivo.read()); //Escribe lo que ahi en el archivo
   }
 
-   archivo.close();
+  archivo.close();
+  LITTLEFS.end();
 
 }
 
