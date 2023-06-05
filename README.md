@@ -11,14 +11,15 @@ ejemplo, el nombre del archivo /website/images/bird_thumbnail.jpg tiene 34 carac
 ```c++
 #include <LITTLEFS.h>
 
-//Esta variable true para formatear
-#define FORMAT_LITTLEFS_IF_FAILED true
+//true para restablecer, false para no restablecer(o se puede dejar vacio)
+bool restablecer = true;
 
 void setup()
 {
   Serial.begin(115200);
+  delay(5000);
 
-  if (!LITTLEFS.begin(FORMAT_LITTLEFS_IF_FAILED))
+  if (!LITTLEFS.begin(restablecer))
   {
     Serial.println("Error montando LittleFs");
     return;
@@ -28,7 +29,6 @@ void setup()
     Serial.println("Formateado correctamente");
   }
   
-
   LITTLEFS.end();
 
 }
