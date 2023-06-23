@@ -145,27 +145,17 @@ void loop()
 
 }
 ```
-r      Open text file for reading.  The stream is positioned at the
-       beginning of the file.
-
-r+     Open for reading and writing.  The stream is positioned at the
-       beginning of the file.
-
-w      Truncate file to zero length or create text file for writing.
-       The stream is positioned at the beginning of the file.
-
-w+     Open for reading and writing.  The file is created if it does
-       not exist, otherwise it is truncated.  The stream is
-       positioned at the beginning of the file.
-
-a      Open for appending (writing at end of file).  The file is
-       created if it does not exist.  The stream is positioned at the
-       end of the file.
-
-a+     Open for reading and appending (writing at end of file).  The
-       file is created if it does not exist.  The initial file
-       position for reading is at the beginning of the file, but
-       output is always appended to the end of the file.
 
 
-investigar como crear carpetas, como saber si existe el archivo, como borrar un archivo en especifico y como spendell algo asi que es para escribir mas datos en un archivo.txt que ya existe y descubrir otras funciones
+
+r Abrir archivo de texto para lectura. La secuencia se coloca al principio del archivo.
+
+r+ Abierto para lectura y escritura. La secuencia se coloca al principio del archivo.
+
+w Truncar el archivo a cero o crear un archivo de texto para escribir. La secuencia se coloca al principio del archivo.
+
+w+ Abierto para lectura y escritura. El archivo se crea si no existe, de lo contrario se trunca. La secuencia se coloca al principio del archivo.
+
+a Abrir para anexar (escribir al final del archivo). El archivo se crea si no existe. La secuencia se coloca al final del archivo.
+
+a+ Abrir para leer y agregar (escribir al final del archivo). El archivo se crea si no existe. La posición inicial del archivo para lectura es al principio del archivo, pero la salida siempre se agrega al final del archivo.
