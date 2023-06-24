@@ -49,7 +49,7 @@ void loop()
 }
 ```
 
-### Codigo para crear el archivo y escribir
+### Codigo para crear el archivo
 ```c++
 #include <LITTLEFS.h>
 
