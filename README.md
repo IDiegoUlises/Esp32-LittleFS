@@ -246,5 +246,7 @@ a+ Abrir para leer y agregar (escribir al final del archivo). El archivo se crea
 
 | Comando | Descripcion | 
 | :---         |     :---:      |          
-| r   | Abrir archivo de texto para lectura. La secuencia se coloca al principio del archivo.     | 
+| r   | Abrir archivo de texto para lectura, la secuencia se coloca al principio del archivo |
+| :---         |     :---:      |      
+
 | git diff     | git diff       | 
