@@ -49,32 +49,36 @@ void loop()
 }
 ```
 
-### Codigo para escribir un archivo 
+### Codigo para crear el archivo y escribir
 ```c++
 #include <LITTLEFS.h>
 
-//Esta variable true para formatear
-#define FORMAT_LITTLEFS_IF_FAILED false
-
+//Ruta del archivo
 String ruta = "/ruta.txt";
-String texto = "Este es el texto que se escribio";
+
+//Texto del archivo txt
+String texto = "Este es el texto";
 
 void setup()
 {
+  //Inicia el puerto serial
   Serial.begin(115200);
+
+  //Retardo de cinco segundos
+  delay(5000);
 
   if (!LITTLEFS.begin())
   {
-    Serial.println("Error montando LittleFs");
+    Serial.println("Error Iniciando LittleFs");
     return;
   }
 
-  else {
-    Serial.println("Demo de LittleFS");
+  else
+  {
+    Serial.println("Inicio de LittleFS Correctamente");
   }
 
-  delay(5000);
-
+  //Crea el archivo
   File archivo = LITTLEFS.open(ruta, "w");
 
   if (!archivo)
@@ -88,11 +92,15 @@ void setup()
     Serial.println("Se escribio en el archivo");
   }
 
-  else {
+  else
+  {
     Serial.println("Error al escribir");
   }
 
+  //Cerrar el archivo
   archivo.close();
+
+  //Cerrar el gestor de archivos
   LITTLEFS.end();
 
 }
