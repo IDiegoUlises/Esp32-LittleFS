@@ -249,7 +249,8 @@ a+ Abrir para leer y agregar (escribir al final del archivo). El archivo se crea
 |  :---: | :---  |          
 | r | Abrir archivo de texto para lectura, la secuencia se coloca al principio del archivo | 
 | r+ | Abierto para lectura y escritura, la secuencia se coloca al principio del archivo |
-| w | Truncar el archivo a cero o crear un archivo de texto para escribir, la secuencia se coloca al principio del archivo | 
+| w | Truncar el archivo a cero o crear un archivo de texto para escribir, la secuencia se coloca al principio del archivo |
+| w+ | Abierto para lectura y escritura el archivo se crea si no existe de lo contrario se trunca, la secuencia se coloca al principio del archivo | 
 
  
 
