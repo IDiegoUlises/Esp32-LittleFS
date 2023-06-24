@@ -244,7 +244,7 @@ a Abrir para anexar (escribir al final del archivo). El archivo se crea si no ex
 
 a+ Abrir para leer y agregar (escribir al final del archivo). El archivo se crea si no existe. La posicion inicial del archivo para lectura es al principio del archivo, pero la salida siempre se agrega al final del archivo.
 
-| Comando | Funcion | 
+| Comando | Descripcion | 
 | :---         |     :---:      |          
-| git status   | git status     | 
+| r   | Abrir archivo de texto para lectura. La secuencia se coloca al principio del archivo.     | 
 | git diff     | git diff       | 
