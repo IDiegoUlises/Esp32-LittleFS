@@ -111,6 +111,67 @@ void loop()
 }
 ```
 
+### Codigo para escribir en un archivo existente
+```c++
+#include <LITTLEFS.h>
+
+//Ruta del archivo
+String ruta = "/ruta.txt";
+
+//Texto del archivo txt
+String texto = "Para agregar texto a un archivo existente";
+
+void setup()
+{
+  //Inicia el puerto serial
+  Serial.begin(115200);
+
+  //Retardo de cinco segundos
+  delay(5000);
+
+  if (!LITTLEFS.begin())
+  {
+    Serial.println("Error Iniciando LittleFs");
+    return;
+  }
+
+  else
+  {
+    Serial.println("Inicio de LittleFS Correctamente");
+  }
+
+  //Abre el archivo
+  File archivo = LITTLEFS.open(ruta, "a");
+
+  if (!archivo)
+  {
+    Serial.println("El archivo no se puede abrir");
+    return;
+  }
+
+  if (archivo.print(texto))
+  {
+    Serial.println("Se escribio correctamente en el archivo");
+  }
+
+  else
+  {
+    Serial.println("Error al escribir");
+  }
+
+  //Cerrar el archivo
+  archivo.close();
+
+  //Cerrar el gestor de archivos
+  LITTLEFS.end();
+}
+
+void loop()
+{
+
+}
+```
+
 ### Codigo para leer un archivo
 ```c++
 #include <LITTLEFS.h>
