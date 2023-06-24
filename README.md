@@ -248,7 +248,8 @@ a+ Abrir para leer y agregar (escribir al final del archivo). El archivo se crea
 | Comando | Descripcion | 
 |  :---: | :---  |          
 | r | Abrir archivo de texto para lectura, la secuencia se coloca al principio del archivo | 
-| r+ | Abierto para lectura y escritura, la secuencia se coloca al principio del archivo | 
+| r+ | Abierto para lectura y escritura, la secuencia se coloca al principio del archivo |
+| w | Truncar el archivo a cero o crear un archivo de texto para escribir, la secuencia se coloca al principio del archivo | 
 
  
 
