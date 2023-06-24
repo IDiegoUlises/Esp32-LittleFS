@@ -89,7 +89,7 @@ void setup()
 
   if (archivo.print(texto))
   {
-    Serial.println("Se escribio en el archivo");
+    Serial.println("Se escribio correctamente en el archivo");
   }
 
   else
@@ -115,43 +115,52 @@ void loop()
 ```c++
 #include <LITTLEFS.h>
 
-//Esta variable true para formatear
-#define FORMAT_LITTLEFS_IF_FAILED false
-
+//Ruta del archivo
 String ruta = "/ruta.txt";
-//String texto = "Este es el texto que se escribio";
 
 void setup()
 {
+  //Inicia el puerto serial
   Serial.begin(115200);
+
+  //Retardo de cinco segundos
+  delay(5000);
 
   if (!LITTLEFS.begin())
   {
     Serial.println("Error montando LittleFs");
     return;
   }
-  else {
-    Serial.println("Demo de LittleFS");
+  else
+  {
+    Serial.println("Inicio de LittleFS Correctamente");
   }
 
-  delay(5000);
-
+  //Abre el archivo en modo lectura
   File archivo = LITTLEFS.open(ruta, "r");
 
+  //En caso que no se pueda abrir el archivo
   if (!archivo)
   {
     Serial.println("El archivo no se puede abrir");
     return;
   }
 
+  //Lee el archivo
   while (archivo.available())
   {
-    Serial.write(archivo.read()); //Escribe lo que ahi en el archivo
+    //Guarda en una variable el texto del archivo
+    char leer = archivo.read();
+
+    //Imprime el texto en el puerto serial
+    Serial.print(leer);
   }
 
+  //Cerrar el archivo
   archivo.close();
-  LITTLEFS.end();
 
+  //Cerar el gestor de archivos
+  LITTLEFS.end();
 }
 
 void loop()
