@@ -242,4 +242,4 @@ w+ Abierto para lectura y escritura. El archivo se crea si no existe, de lo cont
 
 a Abrir para anexar (escribir al final del archivo). El archivo se crea si no existe. La secuencia se coloca al final del archivo.
 
-a+ Abrir para leer y agregar (escribir al final del archivo). El archivo se crea si no existe. La posición inicial del archivo para lectura es al principio del archivo, pero la salida siempre se agrega al final del archivo.
+a+ Abrir para leer y agregar (escribir al final del archivo). El archivo se crea si no existe. La posicion inicial del archivo para lectura es al principio del archivo, pero la salida siempre se agrega al final del archivo.
