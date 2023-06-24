@@ -15,24 +15,30 @@ ejemplo, el nombre del archivo /website/images/bird_thumbnail.jpg tiene 34 carac
 ```c++
 #include <LITTLEFS.h>
 
-//true para restablecer, false para no restablecer(o se puede dejar vacio)
+//false para no restablecer(Por defecto esta definido como false)
+//true para restablecer
 bool restablecer = true;
 
 void setup()
 {
+  //Inicia el puerto serial
   Serial.begin(115200);
+
+  //Retardo de cinco segundos
   delay(5000);
 
   if (!LITTLEFS.begin(restablecer))
   {
-    Serial.println("Error montando LittleFs");
+    Serial.println("Error Iniciando LittleFs");
     return;
   }
+
   else
   {
-    Serial.println("Formateado correctamente");
+    Serial.println("Formateado Correctamente");
   }
-  
+
+  //Cerrar gestor de archivos
   LITTLEFS.end();
 
 }
