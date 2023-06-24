@@ -3,7 +3,7 @@
 ### Libreria
 <img src="https://github.com/IDiegoUlises/Esp32-LittleFS/blob/main/Images/Libreria-LittleFS.jpg" />
 
-* LittleFS es para guardar datos en la memoria pero a diferencia de Spiff que es una libreria obsoleta y no recibira mas actualizaciones
+* Anteriormente se utilizaba Spiff para guardar datos en la memoria pero actualmente esta esta obsoleta y ahora debe utilizarle LittleFS 
 * LittleFS permite guardar una amplia cantidad de datos
 
 ### Codigo para formatear la memoria
